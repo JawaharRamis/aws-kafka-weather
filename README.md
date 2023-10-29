@@ -15,7 +15,7 @@ Before you start, make sure you have the following dependencies and access crede
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/yourusername/your-repo.git
+   git clone https://github.com/JawaharRamis/aws-kafka-weather.git
    ```
 
 2. Navigate to the project directory:
