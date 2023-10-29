@@ -21,25 +21,28 @@ Before you start, make sure you have the following dependencies and access crede
 2. Run a Kafka Broker on AWS EC2
    - Launch an EC2 instance on AWS with the necessary security groups and network configurations.
    - Install and configure Kafka on the EC2 instance. You can follow the [official Apache Kafka documentation](https://kafka.apache.org/quickstart) for guidance.
-   - Ensure that your Kafka broker is accessible over the network. Replace the adve
-2. Navigate to the project directory:
+   - Configure Kafka to use the public IP of your EC2 instance to advertise listeners. Update your `server.properties` file, usually located in the Kafka config directory. Look for the `advertised.listeners` property and set it to your EC2 instance's public IP and the Kafka port (e.g., `PLAINTEXT://<your-ec2-public-ip>:9092`).
 
-3. Update the Docker Compose file (`docker-compose.yml`) with your specific configuration:
+     
+3. Navigate to the project directory:
 
-   - Set the `KAFKA_BROKER` environment variable to the address of your Kafka broker.
+
+4. Update the Docker Compose file (`docker-compose.yml`) with your specific configuration:
+
+   - Set the `KAFKA_BROKER` environment variable to the address of your Kafka broker(EC2 instance public ip).
    - Specify your Kafka topic name with the `TOPIC_NAME` variable.
    - Provide your OpenWeather API key as the `OPENWEATHER_API` variable for the producer.
    - For the consumer, set AWS S3 access credentials with `AWS_ACCESS_KEY` and `AWS_SECRET_KEY`, and specify the target S3 bucket with `S3_BUCKET`.
 
-4. Build and start the services:
+5. Build and start the services:
 
    ```bash
    docker-compose up -d
    ```
 
-5. The Kafka producer will fetch data from the OpenWeather API and push it to the specified Kafka topic.
+6. The Kafka producer will fetch data from the OpenWeather API and push it to the specified Kafka topic.
 
-6. The Kafka consumer will read data from the Kafka topic and write it to the AWS S3 bucket.
+7. The Kafka consumer will read data from the Kafka topic and write it to the AWS S3 bucket.
 
 ## Monitoring and Logging
 
