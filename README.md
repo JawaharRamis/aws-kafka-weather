@@ -18,6 +18,10 @@ Before you start, make sure you have the following dependencies and access crede
    git clone https://github.com/JawaharRamis/aws-kafka-weather.git
    ```
 
+2. Run a Kafka Broker on AWS EC2
+   - Launch an EC2 instance on AWS with the necessary security groups and network configurations.
+   - Install and configure Kafka on the EC2 instance. You can follow the [official Apache Kafka documentation](https://kafka.apache.org/quickstart) for guidance.
+   - Ensure that your Kafka broker is accessible over the network. Replace the adve
 2. Navigate to the project directory:
 
 3. Update the Docker Compose file (`docker-compose.yml`) with your specific configuration:
