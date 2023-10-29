@@ -7,7 +7,7 @@ This project demonstrates a setup for a Kafka producer and consumer, designed to
 Before you start, make sure you have the following dependencies and access credentials:
 
 - [Docker](https://www.docker.com/get-started)
-- A running Kafka broker accessible over the network.
+- A running Kafka broker accessible over the network on an AWS EC2 instance.
 - AWS S3 credentials with access to an S3 bucket.
 
 ## Getting Started
