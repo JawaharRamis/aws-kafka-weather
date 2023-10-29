@@ -1,4 +1,3 @@
-```markdown
 # Kafka Producer and Consumer with AWS S3 Integration
 
 This project demonstrates a setup for a Kafka producer and consumer, designed to fetch data from an external API and store it in AWS S3.
