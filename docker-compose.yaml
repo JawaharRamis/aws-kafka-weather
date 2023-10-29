@@ -1,0 +1,36 @@
+version: '3'
+services:
+  kafka-producer:
+    build:
+      context: ./producer  
+      dockerfile: Dockerfile
+    container_name: kafka-producer
+    networks:
+      - kafka-network
+    environment:
+      - KAFKA_BROKER=34.222.42.67:9092  # Set the Kafka broker address
+      - TOPIC_NAME=weather_data 
+      - OPENWEATHER_API=api_key
+    volumes:
+      - ./producer:/app  # Mount the producer code and requirements
+    depends_on:
+      - kafka-consumer
+
+  kafka-consumer:
+    build:
+      context: ./consumer  # Set the context to the subdirectory with Dockerfile
+      dockerfile: Dockerfile
+    container_name: kafka-consumer
+    networks:
+      - kafka-network
+    environment:
+      - KAFKA_BROKER=34.222.42.67:9092  # Set the Kafka broker address
+      - AWS_ACCESS_KEY=aws_access_key
+      - AWS_SECRET_KEY=aws_secret_key
+      - TOPIC_NAME=weather_data
+      - S3_BUCKET=kafka-weather-data-bucket
+    volumes:
+      - ./consumer:/app  # Mount the consumer code and requirements
+
+networks:
+  kafka-network:
