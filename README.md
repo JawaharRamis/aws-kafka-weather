@@ -1,6 +1,6 @@
-# Kafka Producer and Consumer with AWS S3 Integration
+# Kafka Producer and Consumer with AWS S3 and Athena Integration
 
-This project demonstrates a setup for a Kafka producer and consumer, designed to fetch data from an external API and store it in AWS S3.
+This project demonstrates a setup for a Kafka producer and consumer, designed to fetch data from an external API and store it in AWS S3 and queried with AWS Athena.
 
 ## Prerequisites
 
@@ -19,10 +19,6 @@ Before you start, make sure you have the following dependencies and access crede
    ```
 
 2. Navigate to the project directory:
-
-   ```bash
-   cd your-repo
-   ```
 
 3. Update the Docker Compose file (`docker-compose.yml`) with your specific configuration:
 
@@ -48,15 +44,3 @@ The producer and consumer services output logs to the console. You can view the 
 ```bash
 docker-compose logs -f
 ```
-
-## Contributing
-
-If you would like to contribute to this project or report issues, please create a pull request or open an issue on the [GitHub repository](https://github.com/yourusername/your-repo).
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-```
-
-Make sure to replace `yourusername/your-repo` with the actual URL of your GitHub repository if you have one. You can further expand on the usage and customization based on your specific project requirements.
