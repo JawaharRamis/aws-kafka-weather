@@ -8,7 +8,7 @@ Before you start, make sure you have the following dependencies and access crede
 
 - [Docker](https://www.docker.com/get-started)
 - AWS S3 credentials with access to an S3 bucket, Athena and Glue.
-
+- API key for openweather
 ## Getting Started
 
 1. **Clone this repository:**
